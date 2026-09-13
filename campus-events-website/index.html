@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Home | Campus Events</title><link rel="stylesheet" href="css/style.css"></head><body class="page-home">
+
+<nav class="navbar">
+ <div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-mark">✦</span><span>CAMPUS<br>EVENTS<small>PLAN. PARTY. MAKE MEMORIES.</small></span></a>
+  <button class="menu-btn">☰</button>
+  <div class="nav-links">
+   <a href="index.html">Home</a><a href="events.html">Events</a><a href="planner.html">Planner</a><a href="clubs.html">Clubs</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="auth.html">Login</a>
+   <a class="btn small primary" href="create-event.html">Create Event ✨</a>
+  </div>
+ </div>
+</nav>
+
+
+<section class="hero"><div class="container"><div class="hero-content">
+ <div class="kicker">✦ Your campus. Your events. Your memories.</div>
+ <h1>College Life,<br><span>Epic Events!</span></h1>
+ <p>From coding battles to DJ nights, discover events, connect with students and create unforgettable campus memories.</p>
+ <div class="hero-actions"><a class="btn primary" href="events.html">Explore Events →</a><a class="btn" href="create-event.html">Create Event ✨</a></div>
+ </div>
+ <div class="countdown" aria-live="polite"><h3>Next Big Event</h3><strong id="nextTitle">Loading...</strong><div class="timer" id="timer"></div><a class="countdown-link" href="events.html">View event details →</a></div>
+</div></div></section>
+<section class="section"><div class="container"><h2 class="section-title">🔥 Trending Events</h2><div class="grid events-grid" id="homeEvents"></div></div></section>
+<section class="section alt"><div class="container"><h2 class="section-title">🎉 Explore by Category</h2><div class="grid category-grid">
+ <a class="category" href="events.html?category=Coding"><div class="icon watercolor-icon" data-icon="code" aria-hidden="true"></div><h4>Coding</h4></a>
+ <a class="category" href="events.html?category=DJ%20Night"><div class="icon watercolor-icon" data-icon="music" aria-hidden="true"></div><h4>DJ Nights</h4></a>
+ <a class="category" href="events.html?category=Hackathon"><div class="icon watercolor-icon" data-icon="rocket" aria-hidden="true"></div><h4>Hackathons</h4></a>
+ <a class="category" href="events.html?category=College%20Fest"><div class="icon watercolor-icon" data-icon="celebration" aria-hidden="true"></div><h4>College Fests</h4></a>
+ <a class="category" href="events.html?category=Workshop"><div class="icon watercolor-icon" data-icon="palette" aria-hidden="true"></div><h4>Workshops</h4></a>
+ <a class="category" href="events.html?category=Sports"><div class="icon watercolor-icon" data-icon="trophy" aria-hidden="true"></div><h4>Sports</h4></a>
+</div></div></section>
+<section class="section"><div class="container"><h2 class="section-title">🧰 Plan Smart. Stay Ahead.</h2><div class="grid tools-grid">
+ <div class="tool"><div class="tool-icon watercolor-icon" data-icon="calendar" aria-hidden="true"></div><h3>Event Calendar</h3><p>See your saved and registered events in one place.</p></div>
+ <div class="tool"><div class="tool-icon watercolor-icon" data-icon="users" aria-hidden="true"></div><h3>Guest List</h3><p>Keep track of registrations and attendees.</p></div>
+ <div class="tool"><div class="tool-icon watercolor-icon" data-icon="wallet" aria-hidden="true"></div><h3>Budget Tracker</h3><p>Plan event expenses and stay on budget.</p></div>
+ <div class="tool"><div class="tool-icon watercolor-icon" data-icon="checklist" aria-hidden="true"></div><h3>Task Manager</h3><p>Break your event into simple tasks.</p></div>
+ <div class="tool"><div class="tool-icon watercolor-icon" data-icon="bell" aria-hidden="true"></div><h3>Reminders</h3><p>Never miss an important deadline.</p></div>
+ <div class="tool"><div class="tool-icon watercolor-icon" data-icon="pin" aria-hidden="true"></div><h3>Venue Booking</h3><p>Find the perfect campus venue.</p></div>
+</div></div></section>
+
+
+<footer class="footer"><div class="container">
+ <div class="footer-grid">
+  <div><h3>Campus Events</h3><p style="margin-top:10px;color:#ddd;line-height:1.6">We don't just plan events — we create campus experiences.</p></div>
+  <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="events.html">Events</a><a href="planner.html">Planner</a><a href="clubs.html">Clubs</a></div>
+  <div><h4>Categories</h4><a href="events.html">Coding</a><a href="events.html">DJ Nights</a><a href="events.html">Hackathons</a><a href="events.html">Fests</a></div>
+  <div><h4>Contact</h4><a href="contact.html">hello@campusevents.com</a><a href="contact.html">+91 98765 43210</a><a href="contact.html">Your College Campus</a></div>
+ </div>
+ <div class="copyright">© <span id="year"></span> Campus Events. All rights reserved. ♥</div>
+</div></footer><div id="toast" class="toast"></div>
+
+<script src="js/data.js"></script><script src="js/main.js"></script><script>
+document.addEventListener("DOMContentLoaded",()=>{
+ const ev=getEvents().sort((a,b)=>a.date.localeCompare(b.date));document.querySelector("#homeEvents").innerHTML=ev.slice(0,4).map(eventCard).join("");
+ const next=ev.find(e=>new Date(e.date+"T"+e.time)>new Date())||ev[0];document.querySelector("#nextTitle").textContent=next.title;
+ const target=new Date(next.date+"T"+next.time);
+ function tick(){let d=Math.max(0,target-new Date());let s=Math.floor(d/1000);let days=Math.floor(s/86400);s%=86400;let hrs=Math.floor(s/3600);s%=3600;let mins=Math.floor(s/60);s%=60;
+ document.querySelector("#timer").innerHTML=`<div><b>${days}</b><span>days</span></div><div><b>${hrs}</b><span>hrs</span></div><div><b>${mins}</b><span>mins</span></div><div><b>${s}</b><span>secs</span></div>`}tick();setInterval(tick,1000);
+});
+</script>
+</body></html>

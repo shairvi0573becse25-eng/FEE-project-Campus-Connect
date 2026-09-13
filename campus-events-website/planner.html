@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Planner | Campus Events</title><link rel="stylesheet" href="css/style.css"></head><body class="page-planner">
+
+<nav class="navbar">
+ <div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-mark">✦</span><span>CAMPUS<br>EVENTS<small>PLAN. PARTY. MAKE MEMORIES.</small></span></a>
+  <button class="menu-btn">☰</button>
+  <div class="nav-links">
+   <a href="index.html">Home</a><a href="events.html">Events</a><a href="planner.html">Planner</a><a href="clubs.html">Clubs</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="auth.html">Login</a>
+   <a class="btn small primary" href="create-event.html">Create Event ✨</a>
+  </div>
+ </div>
+</nav>
+
+
+<main class="container"><section class="page-head"><h1>My Planner</h1><p>Save events, manage your schedule and stay ready for campus life.</p></section>
+<section class="planner-layout">
+ <div class="form-card calendar"><div class="cal-head"><button class="btn small">‹</button><b>September 2026</b><button class="btn small">›</button></div>
+ <table><thead><tr><th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th></tr></thead><tbody>
+ <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td class="event-day">12</td></tr>
+ <tr><td>13</td><td>14</td><td class="event-day">15</td><td>16</td><td>17</td><td class="event-day">18</td><td>19</td></tr><tr><td class="event-day">20</td><td>21</td><td>22</td><td>23</td><td class="event-day">24</td><td>25</td><td>26</td></tr><tr><td>27</td><td class="event-day">28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
+ </tbody></table>
+ <div style="margin-top:20px"><b>Saved: <span id="savedCount">0</span></b> &nbsp; <b>Registered: <span id="registeredCount">0</span></b></div>
+ </div>
+ <div><div class="planner-tools">
+  <div class="tool"><div class="tool-icon watercolor-icon" data-icon="users" aria-hidden="true"></div><h3>Guest List</h3><p>Manage attendees.</p></div><div class="tool"><div class="tool-icon watercolor-icon" data-icon="wallet" aria-hidden="true"></div><h3>Budget Tracker</h3><p>Track event spending.</p></div><div class="tool"><div class="tool-icon watercolor-icon" data-icon="checklist" aria-hidden="true"></div><h3>Tasks</h3><p>Organize deadlines.</p></div><div class="tool"><div class="tool-icon watercolor-icon" data-icon="bell" aria-hidden="true"></div><h3>Reminders</h3><p>Never miss a date.</p></div><div class="tool"><div class="tool-icon watercolor-icon" data-icon="pin" aria-hidden="true"></div><h3>Venue</h3><p>Plan your location.</p></div><div class="tool"><div class="tool-icon watercolor-icon" data-icon="calendar" aria-hidden="true"></div><h3>Schedule</h3><p>Plan your timeline.</p></div>
+ </div><div class="form-card saved-list"><h2>♡ My Saved Events</h2><div id="savedList"></div></div></div>
+</section></main>
+
+
+<footer class="footer"><div class="container">
+ <div class="footer-grid">
+  <div><h3>Campus Events</h3><p style="margin-top:10px;color:#ddd;line-height:1.6">We don't just plan events — we create campus experiences.</p></div>
+  <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="events.html">Events</a><a href="planner.html">Planner</a><a href="clubs.html">Clubs</a></div>
+  <div><h4>Categories</h4><a href="events.html">Coding</a><a href="events.html">DJ Nights</a><a href="events.html">Hackathons</a><a href="events.html">Fests</a></div>
+  <div><h4>Contact</h4><a href="contact.html">hello@campusevents.com</a><a href="contact.html">+91 98765 43210</a><a href="contact.html">Your College Campus</a></div>
+ </div>
+ <div class="copyright">© <span id="year"></span> Campus Events. All rights reserved. ♥</div>
+</div></footer><div id="toast" class="toast"></div>
+
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/planner.js"></script>
+</body></html>

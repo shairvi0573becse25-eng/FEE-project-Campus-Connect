@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Create Event | Campus Events</title><link rel="stylesheet" href="css/style.css"></head><body class="page-create">
+
+<nav class="navbar">
+ <div class="nav-inner">
+  <a href="index.html" class="logo"><span class="logo-mark">✦</span><span>CAMPUS<br>EVENTS<small>PLAN. PARTY. MAKE MEMORIES.</small></span></a>
+  <button class="menu-btn">☰</button>
+  <div class="nav-links">
+   <a href="index.html">Home</a><a href="events.html">Events</a><a href="planner.html">Planner</a><a href="clubs.html">Clubs</a><a href="gallery.html">Gallery</a><a href="contact.html">Contact</a><a href="auth.html">Login</a>
+   <a class="btn small primary" href="create-event.html">Create Event ✨</a>
+  </div>
+ </div>
+</nav>
+
+
+<main class="container"><section class="page-head"><h1>Create New Event</h1><p>Fill in the details and publish your campus event.</p></section>
+<form class="form-card" id="createForm"><div class="form-grid">
+ <div class="field"><label>Event Name *</label><input name="title" required placeholder="e.g. Tech Fest 2026"></div>
+ <div class="field"><label>Event Type *</label><select name="category" required><option value="">Select type</option><option>Coding</option><option>DJ Night</option><option>Hackathon</option><option>College Fest</option><option>Workshop</option><option>Sports</option><option>Music</option></select></div>
+ <div class="field full"><label>Description *</label><textarea name="description" required placeholder="Tell students what this event is about..."></textarea></div>
+ <div class="field"><label>Date *</label><input type="date" name="date" required></div><div class="field"><label>Time *</label><input type="time" name="time" required></div>
+ <div class="field"><label>Venue *</label><input name="venue" required placeholder="Main Auditorium"></div><div class="field"><label>Seats *</label><input type="number" name="seats" min="1" value="100" required></div>
+ <div class="field"><label>Emoji / Event Icon</label><input name="emoji" value="🎉" maxlength="4"></div>
+ <div class="field" style="justify-content:end"><button class="btn primary" type="submit">Create Event ✨</button></div>
+</div></form></main>
+
+
+<footer class="footer"><div class="container">
+ <div class="footer-grid">
+  <div><h3>Campus Events</h3><p style="margin-top:10px;color:#ddd;line-height:1.6">We don't just plan events — we create campus experiences.</p></div>
+  <div><h4>Quick Links</h4><a href="index.html">Home</a><a href="events.html">Events</a><a href="planner.html">Planner</a><a href="clubs.html">Clubs</a></div>
+  <div><h4>Categories</h4><a href="events.html">Coding</a><a href="events.html">DJ Nights</a><a href="events.html">Hackathons</a><a href="events.html">Fests</a></div>
+  <div><h4>Contact</h4><a href="contact.html">hello@campusevents.com</a><a href="contact.html">+91 98765 43210</a><a href="contact.html">Your College Campus</a></div>
+ </div>
+ <div class="copyright">© <span id="year"></span> Campus Events. All rights reserved. ♥</div>
+</div></footer><div id="toast" class="toast"></div>
+
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/create-event.js"></script>
+</body></html>
